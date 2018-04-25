@@ -1,0 +1,11 @@
+{
+  "name": "alpha-utils",
+  "version": "0.0.1",
+  "description": "Developer utilities used by alpha-scripts",
+  "repository": "https://github.com/yoranfu/alpha-utils.git",
+  "author": "yoranfu",
+  "license": "MIT",
+  "files": [
+    "mockMiddleware.js"
+  ]
+}
