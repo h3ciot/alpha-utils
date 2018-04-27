@@ -9,6 +9,10 @@
     "mockMiddleware.js"
   ],
   "dependencies": {
-    "fs-extra": "3.0.1"
+    "fs-extra": "3.0.1",
+    "methods": "^1.1.2"
+  },
+  "peerDependencies": {
+    "express": "4.x"
   }
 }
