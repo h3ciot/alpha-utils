@@ -5,8 +5,16 @@
   "repository": "https://github.com/yoranfu/alpha-utils.git",
   "author": "yoranfu",
   "license": "MIT",
+  "keywords": [
+    "express",
+    "mock",
+    "restful",
+    "router",
+    "api"
+  ],
   "files": [
-    "mockMiddleware.js"
+    "mockMiddleware.js",
+    "template"
   ],
   "dependencies": {
     "fs-extra": "3.0.1",
