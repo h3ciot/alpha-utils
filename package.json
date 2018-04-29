@@ -30,6 +30,6 @@
     "node-mocks-http": "^1.5.8"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha --exit"
   }
 }
