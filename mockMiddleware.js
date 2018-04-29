@@ -20,15 +20,14 @@ const MOCK_DEFAULT_PATH = 'mock';
  * @returns {Function}
  */
 module.exports = function createMockMiddleware(options = {}) {
-  options = {
+  options = Object.assign({
     path: MOCK_DEFAULT_PATH,
     fields: {
       code: 'code',
       message: 'message',
       data: 'data',
     },
-    ...options,
-  };
+  }, options);
   let router = undefined;
 
   function commonCallback(rawData) {
