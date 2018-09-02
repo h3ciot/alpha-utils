@@ -7,14 +7,8 @@ var middleware = require('../mockMiddleware');
 describe('Mock middleware test', function(){
   describe('default options', function(){
     var mw;
-    var request = {};
-    var response = {};
+
     beforeEach(function(done){
-      request = httpMocks.createRequest({
-        method: 'GET',
-        url: '/api',
-      });
-      response = httpMocks.createResponse();
       mw = middleware();
       done();
     });
@@ -25,11 +19,31 @@ describe('Mock middleware test', function(){
     });
 
     it('should get the right response', function(done) {
-      mw(request, response);
+      var request = httpMocks.createRequest({
+        method: 'GET',
+        url: '/api',
+      });
+      var response = httpMocks.createResponse();
+      mw(request, response, function(){
+        response.status(404).end;
+      });
       expect(response.statusCode).to.equal(200);
       var res = JSON.parse(response._getData());
       expect(res.data.title).to.equal('mock');
       expect(res.data.author).to.equal('yoranfu');
+      done();
+    });
+
+    it('non-exist mock route', function(done){
+      var request = httpMocks.createRequest({
+        method: 'GET',
+        url: '/404',
+      });
+      var response = httpMocks.createResponse();
+      mw(request, response, function(){
+        response.status(404).end;
+      });
+      expect(response.statusCode).to.equal(404);
       done();
     });
   })
