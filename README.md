@@ -12,3 +12,14 @@ var app = express();
 app.use(mockMiddleware({path: '/mock'}))
 
 ```
+
+## Options
+
+
+### `path` (default: 'mock')
+
+set the path where the mock files in
+
+### `disable` (default: false)
+
+when set to `true`, all mock routes are disabled
