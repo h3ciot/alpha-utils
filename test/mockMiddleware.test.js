@@ -47,4 +47,26 @@ describe('Mock middleware test', function(){
       done();
     });
   })
+
+  describe('disable mock', function(){
+    var mw;
+
+    beforeEach(function(done){
+      mw = middleware({disable: true});
+      done();
+    });
+
+    it('should get 404', function(done){
+      var request = httpMocks.createRequest({
+        method: 'GET',
+        url: '/api',
+      });
+      var response = httpMocks.createResponse();
+      mw(request, response, function(){
+        response.status(404).end;
+      });
+      expect(response.statusCode).to.equal(404);
+      done();
+    });
+  })
 })

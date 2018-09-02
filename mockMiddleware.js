@@ -22,6 +22,7 @@ const MOCK_DEFAULT_PATH = 'mock';
 module.exports = function createMockMiddleware(options = {}) {
   options = Object.assign({
     path: MOCK_DEFAULT_PATH,
+    disable: false,
     fields: {
       code: 'code',
       message: 'message',
@@ -113,7 +114,7 @@ module.exports = function createMockMiddleware(options = {}) {
   }
 
   return function mockMiddleware(req, res, next) {
-    if (router) {
+    if (!options.disable && router) {
       router(req, res, next);
     } else {
       next();
