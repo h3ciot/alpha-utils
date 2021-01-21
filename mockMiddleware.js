@@ -72,6 +72,7 @@ module.exports = function createMockMiddleware(options = {}) {
           delete require.cache[require.resolve(file)];
           return mockConfig;
         } catch (e) {
+          console.error(e);
           return null;
         }
       })
