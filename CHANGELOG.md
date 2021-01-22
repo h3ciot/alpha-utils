@@ -1,4 +1,7 @@
-## 1.1.0 (Apr 27, 2018)
+## 1.1.1 (Jan 22, 2021)
+* print log when resolve file failed
+
+## 1.1.0 (Sept 3, 2018)
 
 ### Features
 
